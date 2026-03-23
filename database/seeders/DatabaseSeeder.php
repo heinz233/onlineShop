@@ -28,7 +28,7 @@ class DatabaseSeeder extends Seeder
 
         User::create([
             'name' => 'Admin',
-            'email' => '233ateng@gmail.com',
+            'email' => 'atengheinz@gmail.com',
             'phone'=> '0781544283',
             'delivery_address'=> 'N/A',
             'role_id'=> 1,
@@ -37,7 +37,7 @@ class DatabaseSeeder extends Seeder
 
         User::create([
             'name' => 'User',
-            'email' => 'ateng.heinz@gmail.com',
+            'email' => '233ateng@gmail.com',
             'phone'=> '0701585836',
             'delivery_address'=> 'N/A',
             'role_id'=> 2,
