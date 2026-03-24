@@ -13,17 +13,18 @@ class AuthController extends Controller
         $validated=$request->validate([
             'name'=>'required|string',
             'email'=>'required|email|unique:users,email',
-            'phone'=>'nullable|string',
-            'delivery_address'=>'nullable|string',
+            'phoneNumber'=>'nullable|string',
+            'deliveryAddress'=>'nullable|string',
             'role_id'=>'required|integer|exists:roles,id',
+            'password'=>'required|string',
         ]);
         $user = new User();
         $user->name = $validated['name'];
         $user->email = $validated['email'];
         $user->password = Hash::make($validated['password']);
         $user->role_id = $validated['role_id'];
-        $user->phone = $validated['phone'];
-        $user->delivery_address = $validated['delivery_address'];
+        $user->phone = $validated['phoneNumber'];
+        $user->delivery_address = $validated['deliveryAddress'];
 
          try{
             $user->save();
